@@ -4,6 +4,7 @@ import 'package:power_tailor/src/common_widgets/custom_button.dart';
 import 'package:power_tailor/src/constants/colors.dart';
 
 
+
 import 'login.dart';
 
 class LoginOrSignUp extends StatelessWidget {
@@ -33,11 +34,6 @@ class LoginOrSignUp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // Expanded(
-              //   child: const SizedBox(
-              //     height: 80,
-              //   ),
-              // ),
               SvgPicture.asset(
                 "assets/images/tailor1.svg",
                 width: 200,
