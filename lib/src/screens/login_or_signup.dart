@@ -15,10 +15,8 @@ class LoginOrSignUp extends StatelessWidget {
     return Scaffold(
       backgroundColor: p1,
       appBar: AppBar(
-        
         backgroundColor: Colors.transparent,
         leading:   MaterialButton(
-                    
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -33,20 +31,20 @@ class LoginOrSignUp extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const SizedBox(
-                height: 80,
-              ),
+              // Expanded(
+              //   child: const SizedBox(
+              //     height: 80,
+              //   ),
+              // ),
               SvgPicture.asset(
                 "assets/images/tailor1.svg",
                 width: 200,
                 height: 200,
                 color: p2,
               ),
-              const SizedBox(
-                height: 80,
-              ),
+            
               customButton(
                 textButton: "ورورد به حساب",
                 onPressed: () {
@@ -57,14 +55,10 @@ class LoginOrSignUp extends StatelessWidget {
                       ));
                 },
               ),
-              const SizedBox(
-                height: 50,
-              ),
+           
               customButton(
                   textButton: "ساخت حساب جدید", onPressed: () {}, width: 250),
-              const SizedBox(
-                height: 100,
-              ),
+            
               Image.asset("assets/images/TechLogo.png", height: 100),
             ],
           ),
