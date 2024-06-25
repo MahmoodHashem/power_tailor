@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:power_tailor/widget.dart';
+import 'package:power_tailor/src/common_widgets/custom_button.dart';
+import 'package:power_tailor/src/constants/colors.dart';
+
 
 import 'login.dart';
 
@@ -9,35 +11,35 @@ class LoginOrSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color p1 = const Color.fromRGBO(28, 49, 50, 1);
-    Color p2 = const Color.fromRGBO(211, 188, 136, 1);
-    Color tColor = const Color.fromRGBO(255, 255, 255, 1);
+
     return Scaffold(
       backgroundColor: p1,
+      appBar: AppBar(
+        
+        backgroundColor: Colors.transparent,
+        leading:   MaterialButton(
+                    
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.asset(
+                      "assets/images/Vector.svg",
+                      height: 30,
+                      color: p2,
+
+                    ),
+                  ), 
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  MaterialButton(
-                    onPressed: () {
-                      Navigator.of(context);
-                    },
-                    child: SvgPicture.asset(
-                      "assets/Vector.svg",
-                      height: 30,
-                      color: p2,
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(
                 height: 80,
               ),
               SvgPicture.asset(
-                "assets/tailor1.svg",
+                "assets/images/tailor1.svg",
                 width: 200,
                 height: 200,
                 color: p2,
@@ -63,7 +65,7 @@ class LoginOrSignUp extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              Image.asset("assets/TechLogo.png", height: 100),
+              Image.asset("assets/images/TechLogo.png", height: 100),
             ],
           ),
         ),

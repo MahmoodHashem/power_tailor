@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:power_tailor/widget.dart';
+import 'package:power_tailor/src/common_widgets/custom_textfield.dart';
+import 'package:power_tailor/src/common_widgets/custom_button.dart';
+import 'package:power_tailor/src/constants/colors.dart';
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,9 +12,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  Color p1 = const Color.fromRGBO(28, 49, 50, 1);
-  Color p2 = const Color.fromRGBO(211, 188, 136, 1);
-  Color tColor = const Color.fromRGBO(255, 255, 255, 1);
 
   @override
   Widget build(BuildContext context) {
