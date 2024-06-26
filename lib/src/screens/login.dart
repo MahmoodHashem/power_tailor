@@ -4,7 +4,9 @@ import 'package:power_tailor/src/common_widgets/custom_textfield.dart';
 import 'package:power_tailor/src/common_widgets/custom_button.dart';
 import 'package:power_tailor/src/constants/colors.dart';
 
-
+import '../common_widgets/back_button.dart';
+import '../common_widgets/google_button.dart';
+import 'login_or_signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -14,23 +16,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading:   MaterialButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: SvgPicture.asset(
-                      "assets/images/Vector.svg",
-                      height: 30,
-                      color: p2,
-                    ),
-                  ), 
-      ),
       backgroundColor: p1,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -38,63 +26,37 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               const Padding(
-                  padding:EdgeInsets.only(right:20),
-                  child:  Align(
+                backIcon(context, onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginOrSignUp(),
+                      ));
+                }),
+                const Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Align(
                     alignment: Alignment.centerRight,
-                    child:Text(  
-                    "ورود",
-                    textDirection: TextDirection.rtl,
-                    style: TextStyle(
-                      color: p2,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                     
-                    ),
-                  ), 
-                  ),
-                ),
-                
-                Container(
-                  height: 60,
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 30, 
-                      vertical: 30
-                    ), 
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                    
-                      side: const BorderSide(
+                    child: Text(
+                      "ورود",
+                      textDirection: TextDirection.rtl,
+                      style: TextStyle(
                         color: p2,
-                        width: 3, 
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                       ),
-                      backgroundColor: tColor, 
-                      foregroundColor: p2, 
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)
-                      )
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(Icons.g_mobiledata),
-                        
-                        Text("رفتن به گوگل"),
-                      ],
                     ),
                   ),
                 ),
-              
+                googleButton(),
                 customTextField(hintText: "ایمیل"),
-                customTextField(hintText: "رمز عبور", 
-                  obscureText: true, 
+                customTextField(
+                  hintText: "رمز عبور",
+                  obscureText: true,
                 ),
                 customTextField(
-                  hintText: "لایسنس", 
-                  
-                  ),
-              
+                  hintText: "لایسنس",
+                ),
                 MaterialButton(
                     onPressed: () {},
                     child: const Text(
