@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_tailor/start.dart';
+import 'package:power_tailor/src/screens/start.dart';
 
 void main() {
   runApp(const MyApp());
